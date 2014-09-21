@@ -1,0 +1,168 @@
+@blue: #6293FE;
+@green: #4cd964;
+@red: #F92132;
+
+html{
+    height: 100%;
+}
+
+body{
+    padding: 0;
+    margin: 0;
+    color: #222;
+    font-family: "Ubuntu", "Helvetica Neue", "Lucida Grande", Arial;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: #f8f8f8;
+    font-size: 16px;
+}
+
+a, p, div, ul, ol, h1, h2, h3, img, textarea, form, select, input{
+    padding: 0;
+    margin: 0;
+}
+input[type="button"], input[type="text"],
+input[type="submit"], input[type="password"]{
+    -webkit-appearance: none;
+}
+img{
+    border: 0px;
+}
+a{
+    text-decoration: none;
+    &:hover{
+        color: orange;
+        text-decoration: none;
+        transition: all 500ms ease
+    }
+}
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+ul > li{
+    list-style-type: circle;
+}
+.clear{
+    clear: both;
+}
+.invisible{
+    display: none;
+}
+.center{
+    position: relative;
+    text-align: center;
+}
+.left{
+    position: relative;
+    float: left;
+}
+.right{
+    position: relative;
+    float: right;
+}
+.inline{
+    display: inline-block;
+}
+input[type=text]{
+    border: solid #ddd 1px;
+    padding: 6px;
+    font-size: 16px;
+    border-radius: 2px;
+}
+
+input[type=submit],
+input[type=button],
+.button{
+    display: inline-block;
+    color: #555;
+    padding: 7px 20px;
+    background: #eee;
+    border-radius: 2px;
+    font-size: 16px;
+    cursor: pointer;
+    border: 0;
+}
+
+input[type=submit].green,
+input[type=button].green,
+.button.green{
+    background: @green;
+    color: #fff;
+}
+
+input[type=submit].red,
+input[type=button].red,
+.button.red{
+    background: @red;
+    color: #fff;
+}
+
+input[type=submit].blue,
+input[type=button].blue,
+.button.blue{
+    background: @blue;
+    color: #fff;
+}
+.sep{
+    padding: 0 5px;
+}
+.padding{
+    padding: 20px;
+    &.vertical{
+        padding: 20px 0;
+    }
+    &.horizontal{
+        padding: 0 20px;
+    }
+
+    &.large{
+        padding: 40px;
+        &.vertical{
+            padding: 40px 0;
+        }
+        &.horizontal{
+            padding: 0 40px;
+        }
+    }
+    &.huge{
+        padding: 160px;
+        &.vertical{
+            padding: 160px 0;
+        }
+        &.horizontal{
+            padding: 0 160px;
+        }
+    }
+}
+.left-aligned{
+    text-align: left
+}
+.right-aligned{
+    text-align: right
+}
+.centered{
+    text-align: center;
+}
+.header{
+    background: #333;
+    color: #fff;
+    background: url('/static/img/intro-bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    .inner{
+        background: rgba(0, 0, 0, 0.5)
+    }
+    .logo{
+        font-size: 48px;
+    }
+    a{
+        color: inherit;
+    }
+}
+.footer{
+    background: @green;
+    color: #fff;
+}

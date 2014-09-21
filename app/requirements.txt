@@ -1,0 +1,6 @@
+tornado
+requests
+nose
+bson
+pymongo
+pillo

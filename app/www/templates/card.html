@@ -1,0 +1,28 @@
+{% extends 'browse.html' %}
+
+{% block container %}
+    <div class="card-view">
+        <img class="image" src="/v1/images/{{item['image']['_id']}}" alt="">
+        <div class="body">
+            <div class="title">{{item.get('title', 'NA')}}</div>
+            <div class="description">{{item.get('description', 'NA')}}</div>
+            <div class="location pull-left orange-text"><i class="fa fa-map-marker"></i> {{item.get('location', {}).get('latitude', 0.00)}} {{item.get('location', {}).get('longitude', 0.00)}}</div>
+            <div class="pull-right">
+
+      {% if item.get('isNegative') %}
+        <i class="circular red inverted icon attention"></i> Issue
+      {% else %}
+        <i class="circular teal inverted icon certificate"></i> Praise
+      {% end %}
+
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <div class="users">
+            {% for user in item.get('users', []) %}
+                <img src="/v1/images/{{item['image']['_id']}}" class="img-circle">
+            {% end %}
+
+        </div>
+    </div>
+{% end %}

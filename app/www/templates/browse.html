@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% block head %}
+    <link href="/static/css/semantic.min.css" rel="stylesheet">
+
+{% end %}
+{% block body %}
+
+    <div class="site-wrapper">
+
+      <div class="site-wrapper-inner">
+
+        <div class="cover-container">
+
+          <div class="masthead clearfix solid">
+            <div class="inner">
+              <h3 class="masthead-brand">VocalEyes</h3>
+              <ul class="nav masthead-nav">
+                <li><a href="/">Home</a></li>
+                <li class="active"><a href="/browse">Browse</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+          <div class="container cards">
+          {% block container %}
+            {% for item in items %}
+                <a class="card" href="/items/{{item['_id']}}">
+                    <img class="image" src="/v1/images/{{item['image']['_id']}}" alt="">
+
+                    <div class="body">
+                        <div class="title">{{item.get('title', 'NA')}}</div>
+                        <div class="description">{{item.get('description')}}</div>
+                        <div class="location pull-left orange-text"><i class="fa fa-map-marker"></i> {{item.get('location', {}).get('latitude', 0.00)}}
+                        {{item.get('location', {}).get('longitude', 0.00)}}</div>
+                        <div class="pull-right">
+
+      {% if item.get('isNegative') %}
+        <span class="red"><i class="circular red inverted icon attention"></i></span>
+      {% else %}
+        <span class="green"><i class="circular teal inverted icon certificate"></i></span>
+      {% end %}
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+
+                </a>
+            {% end %}
+          {% end %}
+          </div>
+
+      </div>
+
+    </div>
+
+{% end %}
